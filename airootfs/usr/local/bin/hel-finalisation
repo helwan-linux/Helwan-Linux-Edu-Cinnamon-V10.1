@@ -1,0 +1,10 @@
+#!/bin/bash
+
+chmod 750 /etc/sudoers.d
+chmod 750 /etc/polkit-1/rules.d
+chgrp polkitd /etc/polkit-1/rules.d
+chmod -v 750 /root
+
+sed -i 's/GRUB_DISTRIBUTOR=.*/GRUB_DISTRIBUTOR="Helwan"/' /etc/default/grub
+
+rm /usr/local/bin/{hel-finalisation,livecd-sound,Installation_guide}
